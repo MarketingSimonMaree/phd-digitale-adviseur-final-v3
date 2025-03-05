@@ -310,12 +310,7 @@ export default function InteractiveAvatar({ children }: Props) {
       try {
         avatar.current.startVoiceChat({
           useSilencePrompt: true,
-          isInputAudioMuted: false,
-          onStartSpeaking: () => setIsUserTalking(true),
-          onStopSpeaking: () => {
-            setIsUserTalking(false);
-            handleInterrupt();
-          }
+          isInputAudioMuted: false
         });
       } catch (error) {
         if (!(error instanceof Error && error.message.includes("WebSocket"))) {
