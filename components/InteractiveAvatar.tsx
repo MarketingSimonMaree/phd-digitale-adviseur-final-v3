@@ -310,9 +310,6 @@ export default function InteractiveAvatar({ children }: Props) {
       try {
         avatar.current.startVoiceChat({
           useSilencePrompt: true,
-          silenceTimeout: 100,
-          silenceThreshold: -50,
-          vadMode: 'aggressive',
           isInputAudioMuted: false,
           onStartSpeaking: () => setIsUserTalking(true),
           onStopSpeaking: () => {
